@@ -1,9 +1,21 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
+  post 'add_to_cart' => 'cart#add_to_cart'
+
+  get 'view_order' => 'cart#view_order'
+
+  get 'checkout' => 'cart#checkout'
+
+  post 'delete_from_cart' => 'cart#delete_from_cart'
+
+  post 'order_complete' => 'cart#order_complete'
+
+  devise_for :users
+  
   root 'storefront#all_items'
 
   get 'categorical' => 'storefront#items_by_category'
 
-  get 'brands' => 'storefront#items_by_brand'
+  get 'branding' => 'storefront#items_by_brand'
 
   resources :categories
   resources :products

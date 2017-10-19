@@ -13,6 +13,9 @@ gem 'carrierwave'
 gem 'cancancan'
 gem 'hirb'
 
+gem 'stripe'
+gem 'figaro'
+
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

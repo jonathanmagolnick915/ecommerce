@@ -1,5 +1,18 @@
-<h1>Welcome to Tech Talent Store</h1>
-<p>Give us your money!</p>
+<h1 class="text-center">Welcome to Tech Talent Store</h1>
+<p class="text-center">Give us your money!</p>
+
+<img src="http://www.nolaparent.com/wp-content/uploads/tech-talent-south.jpg" class="center-block"><br> 
+
+<div><h1 class="text-center">Here are our Top-Selling Items</h1></div>
+
+<%= render 'productloop' %>
+
+<footer class="w3-container w3-teal">
+  <h5>Footer</h5>
+  <p>Footer information goes here</p>
+</footer>
+
+<!-- <div><h1 class="text-center">Here are our Top-Selling Items</h1></div>
 
 <div class="row">
 	<% @products.each do |product| %>
@@ -15,26 +28,5 @@
 				</p>
 			</div>
 		</div>
-		<!-- Modal -->
-		<div class="modal fade" id="myModal_<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel"><%= product.name %></h4>
-		      </div>
-		      <div class="modal-body">
-		      	<p><%= image_tag product.image, size: 150 %></p>	
-		      	<p>Made by: <%= product.brand %></p>
-		      	<p>Rating: <%= product.rating %></p>
-		      	<p>Category: <%= product.category.name %></p>
-		      	<p>Description: <%= product.description %></p>	
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
 	<% end %>
-</div>
+</div> -->

@@ -11,49 +11,49 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name, id: :product_name %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :price %>
     <%= form.text_field :price, id: :product_price %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :quantity %>
     <%= form.number_field :quantity, id: :product_quantity %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
     <%= form.text_area :description, id: :product_description %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :brand %>
     <%= form.text_field :brand, id: :product_brand %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :rating %>
     <%= form.number_field :rating, id: :product_rating %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :category_id %>
     <%= form.select(:category_id, @categories.collect{ |c| [c.name, c.id]}, 
     { include_blank: "Select Category"}, required: :true, id: :product_category_id) %>
   </div>
 
   <% if current_page?(new_product_path) %>
-  <div class="field">
+  <div class="form-group">
     <%= form.label :image %>
     <%= form.file_field :image, required: true, id: :product_image %>
   </div>
   <% else %>
-  <div class="field">
+  <div class="form-group">
     <%= form.label :image %>
     <%= form.file_field :image, required: :true, id: :product_image %>
   </div>

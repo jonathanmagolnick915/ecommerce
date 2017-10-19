@@ -1,6 +1,3 @@
-<h1 class="text-center">Welcome to Tech Talent Store</h1>
-<p class="text-center">All of our <%= @category.name %></p>
-
 <div class="row">
 	<% @products.each do |product| %>
 		<div class="col-sm-6 col-md-4">
@@ -31,6 +28,11 @@
 		      	<p>Description: <%= product.description %></p>	
 		      </div>
 		      <div class="modal-footer">
+		      	<%= form_tag add_to_cart_path, method: :post do %>
+		      		<%= hidden_field_tag :product_id, product.id %>
+		      		<%= number_field_tag :quantity, nil, min: 1, placeholder: "How Many?", class: "form-control", style: "width: 120px; display: inline-block;" %>
+		      		<%= submit_tag "Add to Cart", class: "btn btn-primary" %>
+		      	<% end %>
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>

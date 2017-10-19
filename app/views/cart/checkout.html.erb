@@ -1,0 +1,49 @@
+<h3>Thanks for Shopping With Us!</h3>
+<p>Let's Review Your Order:</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Unit Price</th>
+			<th>Total Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @order.order_items.each do |key, value| %>
+		<tr>
+		<td><%= Product.find(key).name %></td>
+		<td><%= value %> x</td>
+		<td><%= number_to_currency Product.find(key).price %></td>
+		<td><%= number_to_currency Product.find(key).price * value %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>	
+
+
+<p>
+	<strong>Order Subtotal:</strong> <%= number_to_currency @order.subtotal %>
+</p>
+
+<p>
+	<strong>Order Tax:</strong><%= number_to_currency @order.sales_tax %>
+</p>
+
+<p>
+	<strong>Grand Total: </strong><%= number_to_currency @order.grand_total %>
+</p>
+
+<div style="display:inline-block;">
+    <%= form_tag order_complete_path do %>
+        <div>
+            <%= hidden_field_tag :order_id, @order.id %> 
+        </div>
+        <script src="https://checkout.stripe.com/checkout.js"
+        class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="Order #<%= @order.id %>"
+        data-amount="<%= (@order.grand_total.to_f.round(2) * 100) %>"></script>
+    <% end %>
+</div>

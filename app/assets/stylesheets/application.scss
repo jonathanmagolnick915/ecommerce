@@ -16,3 +16,19 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+    background-color: lightblue;
+}
+
+.well {
+	background-color: white;
+}
+
+.navbar-default {
+	background-color: black;
+}
+
+footer {
+	background-color: black;
+}
