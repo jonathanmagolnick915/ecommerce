@@ -1,32 +1,11 @@
 <h1 class="text-center">Welcome to Tech Talent Store</h1>
 <p class="text-center">Give us your money!</p>
 
-<img src="http://www.nolaparent.com/wp-content/uploads/tech-talent-south.jpg" class="center-block"><br> 
-
-<div><h1 class="text-center">Here are our Top-Selling Items</h1></div>
+	<% if current_user.nil? %>
+		<h5>Give us your money!</h5>
+	<% else %>
+		<h5>Take a look, <strong><%= current_user.name %></strong></h5>
+	<% end %>
 
 <%= render 'productloop' %>
 
-<footer class="w3-container w3-teal">
-  <h5>Footer</h5>
-  <p>Footer information goes here</p>
-</footer>
-
-<!-- <div><h1 class="text-center">Here are our Top-Selling Items</h1></div>
-
-<div class="row">
-	<% @products.each do |product| %>
-		<div class="col-sm-6 col-md-4">
-			<div class="well text-center">
-				<p><%= image_tag product.image, size: 250 %></p>
-				<h3><%= link_to product.name, product %></h3>
-				<p><%= number_to_currency product.price %></p>
-				<p>
-					<a href="#" data-toggle="modal" data-target="#myModal_<%= product.id %>">
-						<span class="glyphicon glyphicon-plus"></span> Quick Info 
-					</a>
-				</p>
-			</div>
-		</div>
-	<% end %>
-</div> -->
